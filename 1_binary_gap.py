@@ -1,15 +1,13 @@
 def solution(N):
     b_N = bin(N)[2:]
-    max_binary_gap = 0
-    current_binary_gap = 0
-    for i in b_N:
-        if int(i) == 0:
-            current_binary_gap += 1
-            if current_binary_gap > max_binary_gap:
-                max_binary_gap = current_binary_gap
-        else:
-            current_binary_gap = 0
-    return max_binary_gap
+    if '0' not in b_N:
+        return 0
+    current_binary_gap = '0'
+    while True:
+        next_binary_gap = current_binary_gap + '0'
+        if next_binary_gap not in b_N:
+            return len(current_binary_gap)
+        current_binary_gap = next_binary_gap
 
 if __name__ == '__main__':
     assert solution(1000) == 3

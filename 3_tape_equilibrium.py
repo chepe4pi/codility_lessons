@@ -6,5 +6,7 @@ def solution(A):
 
 
 if __name__ == '__main__':
+    assert solution([10, 15, 25, 45]) == 5
     assert solution([3, 1, 2, 4, 3]) == 1
     assert solution([3, 1]) == 2
+    assert solution([1, 3]) == 2
